@@ -60,13 +60,7 @@ const youChangeYouLose = (but) => {
     but.start.disabled = true;
 }
 
-const gameIsOnOne = but => {
-    // for (var i = 0; i < 3; i++) {
-    //     conf[i] += 3;
-    // } // Отключаем пред кнопки
-    // console.log(conf[0]);
-    // console.log(conf[1]);
-    // console.log(conf[2]); 
+const gameIsOnOne = but => { 
     if (but.plug === 0) { 
         but.playPos = 1;
         console.log('Игрок выбрал ячейку - ', but.playPos);
@@ -96,10 +90,6 @@ const gameIsOnOne = but => {
             youChangeYouLose(but);
         }
     }
-
-    // but[but.carPos].addEventListener('click', () => youWon(playPos, but));
-    // but[playPos].addEventListener('click', () => youMight(playPos, but));
-    // // but[lastDoor].addEventListener('click', () => youChangeYouLose(playPos, but, lastDoor));
 }
 
 const gameIsOnTwo = but => {
@@ -172,14 +162,10 @@ var prises = {
 }
 
 const init = () => {
-    // var conf = [1, 2, 3];
     const but = {
         1 : document.getElementById('baton1'),
         2 : document.getElementById('baton2'),
         3 : document.getElementById('baton3'),
-        // 4 : document.getElementById('baton4'),
-        // 5 : document.getElementById('baton5'),
-        // 6 : document.getElementById('baton6'),
         start : document.getElementById('start'),
         carPos : 0,
         playPos : 0,
@@ -252,10 +238,6 @@ const gameReal = (doors, but) => {
     but[1].disabled = false;
     but[2].disabled = false;
     but[3].disabled = false;
-    // but[4].disabled = true;
-    // but[5].disabled = true;
-    // but[6].disabled = true;
-
     
     for (var i = 0; i < doors.length; i++) { 
         doors[i] = Math.random();    
