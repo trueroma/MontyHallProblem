@@ -29,6 +29,12 @@ const youWon = (playPos, but) => {
         but[but.carPos].innerHTML = 'Тут авто';
         but[but.lastDoor].innerHTML = 'Тут коза';
         but.plug = 0;
+        but.total++;
+        but.win++;
+        console.log('Всего игр - ', but.total);
+        console.log('Побед - ', but.win);
+        console.log('Поражений - ', but.loss, '\n\n');
+        // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
     } else {
         alert('Ну и зачем я предложил сменить дверь, знаю же, что шанс в 100500 раз увеличивается :(');
         for (var i = 1; i < 4; i++) {
@@ -37,6 +43,12 @@ const youWon = (playPos, but) => {
         but[but.carPos].innerHTML = 'Тут авто';
         but[but.playPos].innerHTML = 'Тут коза';
         but.plug = 0;
+        but.total++;
+        but.win++;
+        console.log('Всего игр - ', but.total);
+        console.log('Побед - ', but.win);
+        console.log('Поражений - ', but.loss, '\n\n');
+        // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
     }
 }
 
@@ -48,6 +60,12 @@ const youMight = (playPos, but) => {
     but[but.carPos].innerHTML = 'Тут авто';
     but[playPos].innerHTML = 'Тут коза';
     but.plug = 0;
+    but.total++;
+    but.loss++;
+    console.log('Всего игр - ', but.total);
+    console.log('Побед - ', but.win);
+    console.log('Поражений - ', but.loss, '\n\n');
+    // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
 }
 
 const youChangeYouLose = (but) => {
@@ -58,12 +76,17 @@ const youChangeYouLose = (but) => {
     but[but.carPos].innerHTML = 'Тут авто';
     but[but.lastDoor].innerHTML = 'Тут коза';
     but.plug = 0;
+    but.total++;
+    but.loss++;
+    console.log('Всего игр - ', but.total);
+    console.log('Побед - ', but.win);
+    console.log('Поражений - ', but.loss, '\n\n');
+    // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
 }
 
 const gameIsOnOne = but => { 
     if (but.plug === 0) { 
         but.playPos = 1;
-        console.log('Игрок выбрал ячейку - ', but.playPos);
         but[but.playPos].innerHTML = 'Ваш выбор';
         
         for (var reveal = Math.round((Math.random() * 2) + 1);
@@ -96,7 +119,6 @@ const gameIsOnOne = but => {
 const gameIsOnTwo = but => {
     if (but.plug === 0) { 
         but.playPos = 2;
-        console.log('Игрок выбрал ячейку - ', but.playPos);
         but[but.playPos].innerHTML = 'Ваш выбор';
         
         for (var reveal = Math.round((Math.random() * 2) + 1);
@@ -129,7 +151,6 @@ const gameIsOnTwo = but => {
 const gameIsOnThree = but => {
     if (but.plug === 0) { 
         but.playPos = 3;
-        console.log('Игрок выбрал ячейку - ', but.playPos);
         but[but.playPos].innerHTML = 'Ваш выбор';
         
         for (var reveal = Math.round((Math.random() * 2) + 1);
@@ -175,6 +196,9 @@ const init = () => {
         plug : 0,
         lastDoor : 0,
         initStatus : 0,
+        total : 0,
+        win : 0,
+        loss : 0,
 
     }
 
