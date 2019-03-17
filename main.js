@@ -191,6 +191,7 @@ const init = () => {
         2 : document.getElementById('baton2'),
         3 : document.getElementById('baton3'),
         start : document.getElementById('start'),
+        explain : document.getElementById('explain'),
         carPos : 0,
         playPos : 0,
         plug : 0,
@@ -204,15 +205,18 @@ const init = () => {
 
     var arr = new Array(3);
     but.start.addEventListener('click', () => gameReal(arr, but));
-    
-    k = prompt('Введите желаемое количество дверей');
-    if (k === null || isNaN(k) || k <= 1) {
-        k = 3;
-        return alert('Тогда в другой раз!');
+    but.explain.addEventListener('click', () => explanation());
+
+    const explanation = () => {        
+        k = prompt('Введите желаемое количество дверей');
+        if (k === null || isNaN(k) || k <= 1) {
+            k = 3;
+            return alert('Тогда в другой раз!');
+        }
+        k = +k;
+        var doors = new Array(k);
+        game(doors);
     }
-    k = +k;
-    var doors = new Array(k);
-    game(doors);
 }
 
 const pick = (arr) => {
