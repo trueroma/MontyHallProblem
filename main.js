@@ -28,7 +28,7 @@ const youWon = (playPos, but) => {
         }
         but[but.carPos].innerHTML = 'Тут авто';
         but[but.lastDoor].innerHTML = 'Тут коза';
-        but.start.disabled = true;
+        but.plug = 0;
     } else {
         alert('Ну и зачем я предложил сменить дверь, знаю же, что шанс в 100500 раз увеличивается :(');
         for (var i = 1; i < 4; i++) {
@@ -36,28 +36,28 @@ const youWon = (playPos, but) => {
         }
         but[but.carPos].innerHTML = 'Тут авто';
         but[but.playPos].innerHTML = 'Тут коза';
-        but.start.disabled = true;
+        but.plug = 0;
     }
 }
 
 const youMight = (playPos, but) => {
-        alert('Оуу, кого-то мамочка зря учила стоять на своём, не так ли?');
+    alert('Оуу, кого-то мамочка зря учила стоять на своём, не так ли?');
         for (var i = 1; i < 4; i++) {
             but[i].disabled = true;
         }
-        but[but.carPos].innerHTML = 'Тут авто';
-        but[playPos].innerHTML = 'Тут коза';
-        but.start.disabled = true;
+    but[but.carPos].innerHTML = 'Тут авто';
+    but[playPos].innerHTML = 'Тут коза';
+    but.plug = 0;
 }
 
 const youChangeYouLose = (but) => {
     alert('Эх, меняла-меняла... зря ты так мечешься!');
-    for (var i = 1; i < 4; i++) {
-        but[i].disabled = true;
-    }
+        for (var i = 1; i < 4; i++) {
+            but[i].disabled = true;
+        }
     but[but.carPos].innerHTML = 'Тут авто';
     but[but.lastDoor].innerHTML = 'Тут коза';
-    but.start.disabled = true;
+    but.plug = 0;
 }
 
 const gameIsOnOne = but => { 
@@ -80,7 +80,8 @@ const gameIsOnOne = but => {
                 but.lastDoor = Math.round((Math.random() * 2) + 1);
             }
         }
-    but.plug++;  
+    but.plug++;
+    but.initStatus++;  
     } else {
         if (but.carPos === 1) {
             youWon(but.playPos, but);
@@ -112,7 +113,8 @@ const gameIsOnTwo = but => {
                 but.lastDoor = Math.round((Math.random() * 2) + 1);
             }
         }
-    but.plug++;  
+    but.plug++;
+    but.initStatus++;  
     } else {
         if (but.carPos === 2) {
             youWon(but.playPos, but);
@@ -144,7 +146,8 @@ const gameIsOnThree = but => {
                 but.lastDoor = Math.round((Math.random() * 2) + 1);
             }
         }
-    but.plug++;  
+    but.plug++;
+    but.initStatus++;  
     } else {
         if (but.carPos === 3) {
             youWon(but.playPos, but);
@@ -170,7 +173,9 @@ const init = () => {
         carPos : 0,
         playPos : 0,
         plug : 0,
-        last : 0
+        lastDoor : 0,
+        initStatus : 0,
+
     }
 
     var arr = new Array(3);
@@ -246,9 +251,11 @@ const gameReal = (doors, but) => {
     but.carPos = getCar(doors);
     getGoat(doors);
 
-    but[1].addEventListener('click', () => gameIsOnOne(but));
-    but[2].addEventListener('click', () => gameIsOnTwo(but));
-    but[3].addEventListener('click', () => gameIsOnThree(but));
+    if (but.initStatus === 0) {    
+        but[1].addEventListener('click', () => gameIsOnOne(but));
+        but[2].addEventListener('click', () => gameIsOnTwo(but));
+        but[3].addEventListener('click', () => gameIsOnThree(but));
+    }
 }
 
 document.addEventListener('DOMContentLoaded', init);
