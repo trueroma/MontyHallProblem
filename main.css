@@ -1,51 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #777;
+    font-family: Tahoma, sans-serif;
+    color: #666666;
+    width: 300px;
+    margin: auto;
 }
 
-.center {
-    margin: 0;
+.btn button{
+    cursor: pointer;
+    background-color: #7FFFD4;
+    border: none; /* Иначе оставались границы */
+    margin: 5px;
+  }
+
+.btn button:hover {
+    color: #9555af;
+    background-color: rgb(253, 188, 188);
+ }
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    margin: 8% 0px;
 }
 
-#baton1 {
-    width: 80px;
+.door {
+    width: 90px;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-#baton2 {
-    width: 80px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#explain, #start {
+    width: 290px;
+    height: 25px;
 }
 
-#baton3 {
-    width: 80px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#batonStart {
-    width: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#batonExplain {
-    width: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.result {
+    text-align: right;
+    margin-right: 180px;
 }

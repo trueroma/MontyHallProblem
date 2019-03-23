@@ -35,6 +35,10 @@ const youWon = (playPos, but) => {
         console.log('Побед - ', but.win);
         console.log('Поражений - ', but.loss, '\n\n');
         // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
+        but.totalRes.innerHTML = but.total;
+        but.winRes.innerHTML = but.win;
+        but.lossRes.innerHTML = but.loss;
+
     } else {
         alert('Ну и зачем я предложил сменить дверь, знаю же, что шанс в 100500 раз увеличивается :(');
         for (var i = 1; i < 4; i++) {
@@ -49,6 +53,9 @@ const youWon = (playPos, but) => {
         console.log('Побед - ', but.win);
         console.log('Поражений - ', but.loss, '\n\n');
         // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
+        but.totalRes.innerHTML = but.total;
+        but.winRes.innerHTML = but.win;
+        but.lossRes.innerHTML = but.loss;
     }
 }
 
@@ -66,6 +73,9 @@ const youMight = (playPos, but) => {
     console.log('Побед - ', but.win);
     console.log('Поражений - ', but.loss, '\n\n');
     // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
+    but.totalRes.innerHTML = but.total;
+    but.winRes.innerHTML = but.win;
+    but.lossRes.innerHTML = but.loss;
 }
 
 const youChangeYouLose = (but) => {
@@ -82,6 +92,9 @@ const youChangeYouLose = (but) => {
     console.log('Побед - ', but.win);
     console.log('Поражений - ', but.loss, '\n\n');
     // Как научусь в дизайн буду выводить это не в консоль, а под кнопки
+    but.totalRes.innerHTML = but.total;
+    but.winRes.innerHTML = but.win;
+    but.lossRes.innerHTML = but.loss;
 }
 
 const gameIsOnOne = but => { 
@@ -200,7 +213,9 @@ const init = () => {
         total : 0,
         win : 0,
         loss : 0,
-
+        totalRes : document.getElementById("total"),
+        winRes : document.getElementById("win"),
+        lossRes : document.getElementById("loss"),
     }
 
     var arr = new Array(3);

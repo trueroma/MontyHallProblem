@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta author='Парень твоей сестры'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The doors</title>
@@ -10,10 +11,18 @@
     <link rel="shortcut icon" href="./favicon.png" type="image/png">
 </head>
 <body>
-    <div id="batonExplain"><button id="explain">Объяснить</button></div>
-    <button id="baton1"></button>
-    <button id="baton2"></button>
-    <button id="baton3"></button>
-    <div id="batonStart"><button id="start">Начать игру!</button></div>
+    <h1 class="header">Try your luck!</h1>
+
+    <div class="btn">
+    <button id="baton1" class="door"></button><button id="baton2" class="door"></button><button id="baton3" class="door"></button>
+    <button id="start">Начать игру!</button>
+    <button id="explain">Объяснить</button>
+    </div>
+
+    <div class="result">
+    <p>Всего игр - <span id="total">0</span></p>
+    <p>Побед - <span id="win">0</span></p>
+    <p>Поражений - <span id="loss">0</span></p>
+    </div>
 </body>
 </html>
