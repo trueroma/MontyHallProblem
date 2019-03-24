@@ -5,15 +5,30 @@
 body {
     font-family: Tahoma, sans-serif;
     color: #666666;
+    margin: auto;
+}
+
+button {
+    cursor: pointer;
+    background-color: #7FFFD4;
+    border: none; /* Иначе оставались границы */
+    margin: 5px;
+}
+
+.btn {
+    width: 300px;
+    margin: auto;
+    display: flex;
+}
+
+.nav {
     width: 300px;
     margin: auto;
 }
 
 .btn button{
-    cursor: pointer;
-    background-color: #7FFFD4;
-    border: none; /* Иначе оставались границы */
-    margin: 5px;
+    width: 90px;
+    height: 200px;
   }
 
 .btn button:hover {
@@ -25,7 +40,7 @@ body {
     text-align: center;
     font-size: 24px;
     font-weight: 900;
-    margin: 8% 0px;
+    margin: 4% 0px;
 }
 
 .door {
@@ -40,5 +55,5 @@ body {
 
 .result {
     text-align: right;
-    margin-right: 180px;
+    margin-right: 50%;
 }
