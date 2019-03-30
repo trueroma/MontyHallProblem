@@ -286,6 +286,7 @@ const gameReal = (doors, but) => {
     but[1].disabled = false;
     but[2].disabled = false;
     but[3].disabled = false;
+    but.plug = 0;
     
     for (var i = 0; i < doors.length; i++) { 
         doors[i] = Math.random();    
