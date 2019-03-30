@@ -31,9 +31,13 @@ button {
     height: 200px;
   }
 
-.btn button:hover {
+button:hover {
     color: #9555af;
     background-color: rgb(253, 188, 188);
+ }
+
+ button:active {
+     background: url(./Nicky.png) no-repeat center center / cover; 
  }
 
 .header {

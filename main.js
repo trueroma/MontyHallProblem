@@ -117,7 +117,6 @@ const gameIsOnOne = but => {
             }
         }
     but.plug++;
-    but.initStatus++;  
     } else {
         if (but.carPos === 1) {
             youWon(but.playPos, but);
@@ -149,7 +148,6 @@ const gameIsOnTwo = but => {
             }
         }
     but.plug++;
-    but.initStatus++;  
     } else {
         if (but.carPos === 2) {
             youWon(but.playPos, but);
@@ -181,7 +179,6 @@ const gameIsOnThree = but => {
             }
         }
     but.plug++;
-    but.initStatus++;  
     } else {
         if (but.carPos === 3) {
             youWon(but.playPos, but);
@@ -300,6 +297,7 @@ const gameReal = (doors, but) => {
         but[2].addEventListener('click', () => gameIsOnTwo(but));
         but[3].addEventListener('click', () => gameIsOnThree(but));
     }
+    but.initStatus++;
 }
 
 document.addEventListener('DOMContentLoaded', init);
